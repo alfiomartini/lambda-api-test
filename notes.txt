@@ -1,0 +1,3 @@
+- testing the scripts
+   - npx ts-node scripts/greetJohn.ts 
+   - npx ts-node scripts/sayHello.ts
