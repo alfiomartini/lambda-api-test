@@ -1,3 +1,8 @@
 - testing the scripts
    - npx ts-node scripts/greetJohn.ts 
    - npx ts-node scripts/sayHello.ts
+
+- questions:
+    - In the selected code, Todo is defined as function of type 
+      (api:Api, _opts?: RegisterOptions)=> void in 'domains/toDo'. Why use this instead of normal router object. 
+      There must be a reason. UI notification services repo (velocity). Actually a paved road utility?
