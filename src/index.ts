@@ -13,6 +13,7 @@ export const handler: APIGatewayProxyHandler = async (
   try {
     //api.run processes de event and returns an HTTP response
     return await api.run(event, context);
+    // maybe this catch block is not needed because of middleware defined in the api module
   } catch (error) {
     console.error("Unhandled error in lambda", (error as Error).message);
     return {
