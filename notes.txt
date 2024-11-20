@@ -1,6 +1,7 @@
 - testing the scripts
    - npx ts-node scripts/greetJohn.ts 
    - npx ts-node scripts/sayHello.ts
+   - sam local invoke LambdaApiFunction  --event events/hello.json
 
 - questions:
     - In the selected code, Todo is defined as function of type 

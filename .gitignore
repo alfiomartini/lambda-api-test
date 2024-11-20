@@ -8,7 +8,11 @@ logs/
 *.log
 *.log.*
 
+.aws-sam
+samconfig.toml
  
+# tsc
+dist
 
 # Optional npm cache directory
 .npm

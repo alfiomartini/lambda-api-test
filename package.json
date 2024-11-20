@@ -5,7 +5,10 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "build": "rimraf dist && tsc"
+    "build:tsc": "rimraf dist && tsc",
+    "prebuild": "rimraf dist && esbuild src/index.ts --bundle --platform=node --target=node20 --outdir=dist/src --external:aws-sdk --minify --sourcemap",
+    "build": "sam build",
+    "deploy": "sam deploy  --stack-name lambda-api-test --capabilities CAPABILITY_IAM --profile default"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +21,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.145",
     "@types/node": "^22.9.0",
+    "esbuild": "^0.24.0",
     "nodemon": "^3.1.7",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",

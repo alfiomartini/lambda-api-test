@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  LambdaApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: MyApiFunction
+      Handler: dist/src/index.handler
+      Runtime: nodejs20.x
+      CodeUri: dist/src
+      Timeout: 10
+      MemorySize: 128
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        GetHello:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
+        GetGreet:
+          Type: Api
+          Properties:
+            Path: /greet/{name}
+            Method: GET
+        PostProcess:
+          Type: Api
+          Properties:
+            Path: /process
+            Method: POST
+
+Outputs:
+  ApiUrl:
+    Description: URL of the API Gateway
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
