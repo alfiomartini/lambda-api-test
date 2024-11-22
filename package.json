@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "build:tsc": "rimraf dist && tsc",
+    "build:tsc": "rimraf build && tsc",
     "prebuild": "rimraf dist && esbuild src/index.ts --bundle --platform=node --target=node20 --outdir=dist/src --external:aws-sdk --minify --sourcemap",
     "build": "sam build",
     "deploy": "sam deploy  --stack-name lambda-api-test --capabilities CAPABILITY_IAM --profile default"

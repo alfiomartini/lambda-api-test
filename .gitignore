@@ -12,6 +12,9 @@ logs/
 samconfig.toml
  
 # tsc
+build
+
+# esbuild
 dist
 
 # Optional npm cache directory
